@@ -1,0 +1,11 @@
+<h3> Employee Registeration Form </h3>
+
+<form (ngSubmit)="createEmployee()">
+    Name : <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"/>
+    DEPARTMENT : <input type="text" class="form-control" [(ngModel)]="employee.empDept" name="empDept"/>
+    Salary : <input type="number" class="form-control" [(ngModel)]="employee.empSalary" name="empSalary"/>
+    <input type="submit" value="Register" class="btn btn-success"/>
+
+</form>
+
+{{message.message}}

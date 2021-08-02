@@ -1,0 +1,24 @@
+<h2> All Employees</h2>
+
+<table class="table">
+    <tr class="table-info">
+        <th>ID </th>
+        <th> NAME </th>
+        <th> DEPARTMENT </th>
+        <th> SALARY </th>
+        <th> HRA </th>
+        <th> TA </th>
+        <th> OPERATIONS </th>
+    </tr>
+    <tr *ngFor="let e of employees">
+        <td>{{e.empId}}</td>
+        <td>{{e.empName}}</td>
+        <td>{{e.empDept}}</td>
+        <td>{{e.empSalary}}</td>
+        <td>{{e.empHra}}</td>
+        <td>{{e.empTa}}</td>
+        <td><button class="btn btn-danger">DELETE</button> |
+            <button class="btn btn-success">EDIT</button>
+        </td>
+    </tr>
+</table>
