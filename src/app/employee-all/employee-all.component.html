@@ -17,8 +17,9 @@
         <td>{{e.empSalary}}</td>
         <td>{{e.empHra}}</td>
         <td>{{e.empTa}}</td>
-        <td><button class="btn btn-danger">DELETE</button> |
-            <button class="btn btn-success">EDIT</button>
+        <td><button class="btn btn-danger" (click)="deleteEmployee(e.empId)">DELETE</button> &nbsp;&nbsp;
+            <button class="btn btn-success" (click)="editEmployee(e.empId)">EDIT</button>
         </td>
     </tr>
 </table>
+{{message.message}}

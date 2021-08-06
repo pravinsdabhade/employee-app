@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Employee } from '../employee';
 import { Message } from '../message';
 import { EmployeeService } from '../employee.service';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,10 +15,15 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeCreateComponent implements OnInit {
 
+  // Create FormGroup
+  // requiredForm: FormGroup;
+
   employee : Employee = new Employee();
   message : Message = new Message();
 
-  constructor(private service:EmployeeService, private router:Router) { }
+  constructor(private service:EmployeeService, private router:Router) {
+    this.createEmployee();
+   }
 
   ngOnInit(): void {
     this.createEmployee();

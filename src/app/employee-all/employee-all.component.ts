@@ -29,10 +29,21 @@ export class EmployeeAllComponent implements OnInit {
       error => {this.employees=[]
         console.log(error);
       }
-      
-      
-      );
-
+    );
   }
 
+  editEmployee(id:number){
+    this.router.navigate(['edit',id]);
+  }
+
+  deleteEmployee(id:number){
+    this.service.deleteEmployee(id).subscribe(
+      data=>{
+        this.message=data;
+        this.getAllEmployees();
+      },
+      error=>{console.log(error)}
+    );
+  }
+  
 }

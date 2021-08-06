@@ -2,6 +2,18 @@
 
 <form (ngSubmit)="createEmployee()">
     Name : <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"/>
+
+    <!-- <div class="form-group">
+        <label class="center-block">Name:
+          <input class="form-control" formControlName="name">
+        </label>
+      </div>
+      <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched" 
+                class="alert alert-danger">
+          <div *ngIf="requiredForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div> -->
     DEPARTMENT : <input type="text" class="form-control" [(ngModel)]="employee.empDept" name="empDept"/>
     Salary : <input type="number" class="form-control" [(ngModel)]="employee.empSalary" name="empSalary"/>
     <input type="submit" value="Register" class="btn btn-success"/>

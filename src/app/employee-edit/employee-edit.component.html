@@ -1,0 +1,15 @@
+<h3> Welcome to employee edit page </h3>
+
+<form (ngSubmit)="updateEmployee()">
+    Employee Id : <input type="text" class="form-control" [(ngModel)]="employee.empId" name="empId" readonly/>
+
+    Name : <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"/>
+
+    Dept : <input type="text" class="form-control" [(ngModel)]="employee.empDept" name="empDept"/>
+
+    Salary : <input type="text" class="form-control" [(ngModel)]="employee.empSalary" name="empSalary"/>
+    
+    <input type="submit" value="update" class="btn btn-success"/>
+
+
+</form>
