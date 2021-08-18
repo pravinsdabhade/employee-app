@@ -1,23 +1,57 @@
-<h3> Employee Registeration Form </h3>
+<!-- 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
 
-<form (ngSubmit)="createEmployee()">
-    Name : <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"/>
 
-    <!-- <div class="form-group">
-        <label class="center-block">Name:
-          <input class="form-control" formControlName="name">
-        </label>
-      </div>
-      <div *ngIf="requiredForm.controls['name'].invalid && requiredForm.controls['name'].touched" 
-                class="alert alert-danger">
-          <div *ngIf="requiredForm.controls['name'].errors.required">
-          Name is required.
-        </div>
-      </div> -->
-    DEPARTMENT : <input type="text" class="form-control" [(ngModel)]="employee.empDept" name="empDept"/>
-    Salary : <input type="number" class="form-control" [(ngModel)]="employee.empSalary" name="empSalary"/>
-    <input type="submit" value="Register" class="btn btn-success"/>
 
-</form>
+  <div class="row">
+    <div class="col-md-7" >
+      <!-- <form (ngSubmit)="createEmployee()"> -->
+      <form>
+        <fieldset>
+            <legend class="text-center">Valid information is required to register. 
+                                            <span class="req"><small> required *</small></span>
+            </legend>
 
-{{message.message}}
+            <div class="form-group">
+                <label for="Name"> 
+                  <span class="req"> * </span>NAME : <small>This will be your login user name</small>
+                    
+                </label>
+                <input type="text" name="name" id="name" class="form-control" [(ngModel)]="employee.empName"
+                      maxlength="30" placeholder="Enter your fullname"/>
+            </div>
+
+            <div class="form-group">
+              <label for="department"> 
+                <span class="req"> * </span>DEPARTMENT : <small>This will be your department name</small>
+                  
+              </label>
+              <input type="text" name="name" id="name" class="form-control" [(ngModel)]="employee.empDept"
+                    maxlength="10" placeholder="Enter department name"/>
+          </div>
+
+          <div class="form-group">
+            <label for="salary"> 
+              <span class="req"> * </span>SALARY : <small>This will be your monthly salary</small>
+                
+            </label>
+            <input type="number" name="name" id="name" class="form-control" [(ngModel)]="employee.empSalary"
+                  maxlength="3" placeholder="Enter your salary amount"/>
+          </div>
+
+          <div class="form-group">
+            <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="createEmployee()">
+          </div>
+              <!-- NAME : <input type="text" class="form-control" [(ngModel)]="employee.empName" name="empName"/>
+              DEPARTMENT : <input type="text" class="form-control" [(ngModel)]="employee.empDept" name="empDept"/>
+              SALARY : <input type="number" class="form-control" [(ngModel)]="employee.empSalary" name="empSalary"/>
+              <input type="submit" value="Register" class="btn btn-success"/> -->
+        </fieldset>     
+      </form>
+    </div>
+  </div>
+<div style="text-align: center"> <small>
+  {{message.message}}</small>
+</div>
